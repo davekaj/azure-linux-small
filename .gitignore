@@ -1,0 +1,4 @@
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+# .terraform.lock.hcl  # Optional; ignore if you don’t want to track the lock file
