@@ -39,7 +39,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.nic.id]
-  size                = "Standard_B2pls_v2"
+  size                = "Standard_B2pls_v2"  # Must use an ARM64-compatible image
 
   admin_username = "azureuser"
   disable_password_authentication = true
@@ -54,10 +54,11 @@ resource "azurerm_linux_virtual_machine" "vm" {
     storage_account_type = "Standard_LRS"
   }
 
+  # Using ARM64-compatible Ubuntu image
   source_image_reference {
     publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "18.04-LTS"
+    offer     = "0001-com-ubuntu-server-focal"
+    sku       = "20_04-lts-arm64"
     version   = "latest"
   }
 }
