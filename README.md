@@ -46,7 +46,7 @@ Update sshkey if not already at the location below
 Then:
 
 ```bash 
-terraform apply # wait about 2 mins, then enter yes
+terraform apply # wait 2 mins, then enter yes
 ```
 
 # Troubleshooting
